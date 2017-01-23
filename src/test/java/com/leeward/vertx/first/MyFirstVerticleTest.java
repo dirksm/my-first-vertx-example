@@ -45,4 +45,17 @@ public class MyFirstVerticleTest {
 			});
 	}
 	
+/**	@Test
+	public void checkThatTheIndexPageIsServed(TestContext context) {
+		final Async async = context.async();
+		vertx.createHttpClient().getNow(port, "localhost","/assets/index.html", response -> {
+			context.assertEquals(response.statusCode(), 200);
+			context.assertEquals(response.headers().get("content-type"), "text/html");
+			response.bodyHandler(body -> {
+				context.assertTrue(body.toString().contains("Whiskey"));
+				async.complete();
+			});
+		});
+	}
+	*/
 }
